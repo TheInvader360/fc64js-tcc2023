@@ -2,6 +2,8 @@ https://tcc.lovebyte.party/day1/
 
 The first challenge is to make a Christmas scene out of the basic shapes that the fantasy consoles provide: maybe draw a Christmas Tree out of triangles or a Snow Man out of circles? Why not both?
 
+You can read the documentation on these shapes for TIC-80 and PICO-8, and you can watch our [Day 1 video](https://www.youtube.com/watch?v=ys4N6itxi44) that gives an overview of using both Fantasy Consoles and these shape functions they provide!
+
 The second challenge is to keep your code to a maximum of 256 characters!
 
 -----
