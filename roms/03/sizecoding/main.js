@@ -1,0 +1,1 @@
+let t=0;function romLoop(){t+=.02;for(let y=0;y<64;y++)for(let x=0;x<64;x++)pix(x,y,Math.round(x+20*t+y*t)%6+1)}

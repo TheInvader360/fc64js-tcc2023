@@ -28,5 +28,3 @@ My alternative approach using fc64js and javascript does still cost a few more b
 * javascript requires ```const```/```let```/```var``` keywords where lua does not
 
 This might make it a bit more difficult to hit the max character targets... I just about scraped under on Day 1 with 253 bytes but I'm guessing this will keep getting harder (getting my excuses in early :D)
-
------

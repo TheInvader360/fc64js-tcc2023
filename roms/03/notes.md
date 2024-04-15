@@ -9,3 +9,5 @@ You can take a look at our [Day 3 video](https://www.youtube.com/watch?v=IPMDLlx
 The second challenge is to keep your effect at a maximum of 128 characters! Half the amount we used on the previous challenges! On the PICO-8 this may be more difficult to do with a custom palette, so for this challenge you can choose not to include the palette in your character count.
 
 -----
+
+Achieved a pretty cool effect in 112 bytes (same ```uncounted.js``` caveat as before)

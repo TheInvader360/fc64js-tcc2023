@@ -47,5 +47,3 @@ can be reduced to:
 -----
 
 Managed a nice scene in 226 bytes (allowing for the same ```uncounted.js``` caveat as before)
-
------
