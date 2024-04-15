@@ -12,6 +12,6 @@ Because: dogfooding :sunglasses:
 
 ## Day 2
 
-![preview](roms/02/preview.png)
+![preview](roms/02/preview.gif)
 
-[readable](https://theinvader360.github.io/fc64js-tcc2023/roms/02/readable/)
+[readable](https://theinvader360.github.io/fc64js-tcc2023/roms/02/readable/) | [sizecoding](https://theinvader360.github.io/fc64js-tcc2023/roms/02/sizecoding/) (226 bytes)

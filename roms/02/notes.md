@@ -7,3 +7,45 @@ If you already made it snow yesterday: Congratulations! Check the technique in t
 The second challenge is to keep your entire scene at a maximum of 256 characters. You might have to make a trade-off to see what gets to stay, snow or your Christmas tree decorations!
 
 -----
+
+Changed to a snowman scene :
+
+* For fun
+* Because it makes more sense than a tree without any snow on it in a blizzard
+* So I had some hope of hitting the character target!
+
+-----
+
+Three strategies for drawing the snowman's nose...
+
+```js
+l=line;l(32,24,37,26,2);l(32,25,37,26,2);l(32,26,37,26,2) // the ```l=line``` alias would be added to an existing aliasing line so no ```let ``` cost, it's still the costliest option overall though...
+```
+
+```js
+poly([{x:32,y:24},{x:37,y:26},{x:32,y:26}],2,2) // aliasing ```poly``` would be costlier than not (only called once)...
+```
+
+```js
+for(let i=0;i<3;i++)line(32,24+i,37,26,2) // aliasing ```line``` would be costlier than not (only called once)...
+```
+
+-----
+
+The eye drawing code:
+
+```js
+rect(29,21,2,2,4);rect(34,21,2,2,4)
+```
+
+can be reduced to:
+
+```js
+[29,34].map(x=>rect(x,21,2,2,4))
+```
+
+-----
+
+Managed a nice scene in 226 bytes (allowing for the same ```uncounted.js``` caveat as before)
+
+-----
