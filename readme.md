@@ -27,3 +27,9 @@ Because: dogfooding :sunglasses:
 ![preview](roms/04/preview.gif)
 
 [readable](https://theinvader360.github.io/fc64js-tcc2023/roms/04/readable/) | [sizecoding](https://theinvader360.github.io/fc64js-tcc2023/roms/04/sizecoding/) (125 bytes)
+
+## Day 5
+
+![preview](roms/05/preview.gif)
+
+[readable](https://theinvader360.github.io/fc64js-tcc2023/roms/05/readable/) | [sizecoding](https://theinvader360.github.io/fc64js-tcc2023/roms/05/sizecoding/) (157 bytes)

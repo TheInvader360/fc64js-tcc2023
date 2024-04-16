@@ -2,8 +2,7 @@ romPalette = [0xff4400, 0xffa600, 0xfeff00, 0x70ff00, 0x00ffda, 0x0079ff, 0xd100
 
 let timer = 0;
 
-function romInit() {
-}
+function romInit() {}
 
 function romLoop() {
   timer++;

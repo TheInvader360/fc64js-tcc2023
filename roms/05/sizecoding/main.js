@@ -1,0 +1,1 @@
+let a,d,s=32,t=0,x,y;function tic(){t+=.2;for(y=-s;y<s;y++)for(x=-s;x<s;x++)a=(Math.atan2(y,x)+t)/.8,d=175/Math.sqrt(x*x+y*y+1),pix(x+s,y+s,d>s?3:~~(a+d)%8)}
