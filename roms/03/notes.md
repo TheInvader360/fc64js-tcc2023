@@ -10,4 +10,4 @@ The second challenge is to keep your effect at a maximum of 128 characters! Half
 
 -----
 
-Achieved a pretty cool effect in 112 bytes (same ```uncounted.js``` caveat as before)
+Achieved a pretty cool effect in 108 bytes (same ```uncounted.js``` caveat as before)

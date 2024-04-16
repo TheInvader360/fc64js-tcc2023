@@ -8,16 +8,22 @@ Because: dogfooding :sunglasses:
 
 ![preview](roms/01/preview.png)
 
-[readable](https://theinvader360.github.io/fc64js-tcc2023/roms/01/readable/) | [sizecoding](https://theinvader360.github.io/fc64js-tcc2023/roms/01/sizecoding/) (253 bytes)
+[readable](https://theinvader360.github.io/fc64js-tcc2023/roms/01/readable/) | [sizecoding](https://theinvader360.github.io/fc64js-tcc2023/roms/01/sizecoding/) (249 bytes)
 
 ## Day 2
 
 ![preview](roms/02/preview.gif)
 
-[readable](https://theinvader360.github.io/fc64js-tcc2023/roms/02/readable/) | [sizecoding](https://theinvader360.github.io/fc64js-tcc2023/roms/02/sizecoding/) (226 bytes)
+[readable](https://theinvader360.github.io/fc64js-tcc2023/roms/02/readable/) | [sizecoding](https://theinvader360.github.io/fc64js-tcc2023/roms/02/sizecoding/) (222 bytes)
 
 ## Day 3
 
 ![preview](roms/03/preview.gif)
 
-[readable](https://theinvader360.github.io/fc64js-tcc2023/roms/03/readable/) | [sizecoding](https://theinvader360.github.io/fc64js-tcc2023/roms/03/sizecoding/) (112 bytes)
+[readable](https://theinvader360.github.io/fc64js-tcc2023/roms/03/readable/) | [sizecoding](https://theinvader360.github.io/fc64js-tcc2023/roms/03/sizecoding/) (108 bytes)
+
+## Day 4
+
+![preview](roms/04/preview.gif)
+
+[readable](https://theinvader360.github.io/fc64js-tcc2023/roms/04/readable/) | [sizecoding](https://theinvader360.github.io/fc64js-tcc2023/roms/04/sizecoding/) (125 bytes)

@@ -1,2 +1,1 @@
-let pix = drawPixel;
-function romInit() {}
+fc64Init(function romInit(){},tic);let pix=drawPixel

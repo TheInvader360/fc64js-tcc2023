@@ -22,9 +22,8 @@ The sizecoding version makes use of ```uncounted.js``` to try to level the playi
 
 My alternative approach using fc64js and javascript does still cost a few more bytes:
 
-* ```function romLoop(){...}``` costs more bytes than ```function TIC()...end```
 * iterating via ```for(let i=0;i<3;i++){...}``` costs more bytes than ```for i=0,2 do...end```
 * javascript requires ```{```/```}``` where lua does not
 * javascript requires ```const```/```let```/```var``` keywords where lua does not
 
-This might make it a bit more difficult to hit the max character targets... I just about scraped under on Day 1 with 253 bytes but I'm guessing this will keep getting harder (getting my excuses in early :D)
+This might make it a bit more difficult to hit the max character targets... I just about scraped under on Day 1 with 249 bytes but I'm guessing this will keep getting harder (getting my excuses in early :D)
