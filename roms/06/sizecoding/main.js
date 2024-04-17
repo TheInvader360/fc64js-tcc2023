@@ -1,0 +1,1 @@
+let d,i,m=Math,s=32,t=0,x,y;function tic(){t++;for(y=-s;y<s;y++)for(x=-s;x<s;x++){d=m.hypot(x,y);pix(x+s,y+s,d<5?0:(~~((m.atan2(y,x)+m.PI)*2.546)^~~(60/(d+1)+t/16))%4)};for(i=0;i<28;i++){x=76+i*8-(t/4)%300;y=s+m.cos(-i+t/16)*16;dText(x,y,'THEINVADER360         FC64JS'[i],t%12<6?4:5)}}

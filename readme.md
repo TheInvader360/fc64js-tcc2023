@@ -33,3 +33,9 @@ Because: dogfooding :sunglasses:
 ![preview](roms/05/preview.gif)
 
 [readable](https://theinvader360.github.io/fc64js-tcc2023/roms/05/readable/) | [sizecoding](https://theinvader360.github.io/fc64js-tcc2023/roms/05/sizecoding/) (157 bytes)
+
+## Day 6
+
+![preview](roms/06/preview.gif)
+
+[readable](https://theinvader360.github.io/fc64js-tcc2023/roms/06/readable/) | [sizecoding](https://theinvader360.github.io/fc64js-tcc2023/roms/06/sizecoding/) (285 bytes)

@@ -1,0 +1,1 @@
+fc64Init(function romInit(){},tic,[0x281d73,0x4f388c,0x7850b3,0xb082d9,0xff0000,0xffff00]);let pix=drawPixel,dText=drawText
