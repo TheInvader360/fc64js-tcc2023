@@ -41,4 +41,4 @@ That said, Day 1 did have me wondering why I went for the approach I did for ```
 
 -----
 
-Finally managed this one in 125 bytes (with the usual ```uncounted.js``` caveat)
+Finally managed this one in 121 bytes (with the usual ```uncounted.js``` caveat)
