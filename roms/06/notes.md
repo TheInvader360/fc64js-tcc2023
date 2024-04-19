@@ -12,4 +12,56 @@ Can't alias ```drawText``` as ```print``` to match tic-80 in ```uncounted.js```,
 
 -----
 
-I could shorten the code further by simplifying the demo - simpler background effect, no nice "end" to the tunnel, a much shorter message, drop the flashing text, introduce imperfections to the tunnel (e.g. replace ```m.PI)*2.546``` with ```3)*2```), etc... I *could* do all of that, but I won't :D I like the demo as it stands and am happy to accept defeat on the sizecoding. I think I managed to get a pretty nice result for just 285 bytes!
+~~I could shorten the code further by simplifying the demo - simpler background effect, no nice "end" to the tunnel, a much shorter message, drop the flashing text, introduce imperfections to the tunnel (e.g. replace ```m.PI)*2.546``` with ```3)*2```), etc... I *could* do all of that, but I won't :D I like the demo as it stands and am happy to accept defeat on the sizecoding. I think I managed to get a pretty nice result for just 285 bytes!~~
+
+-----
+
+I decided to revisit this having achieved the Day 7 target size - nested loops are a prime target now!
+
+Replaced:
+
+```js
+for (let y = -32; y < 32; y++) {
+  for (let x = -32; x < 32; x++) {
+    const angle = Math.atan2(y, x);
+    const distance = Math.sqrt(x * x + y * y);
+    const angleModified = (angle + Math.PI) * 2.546;
+    const distanceModified = 60 / (distance + 1) + timer / 16;
+    const color = distance < 5 ? 0 : (Math.floor(angleModified) ^ Math.floor(distanceModified)) % 4;
+    drawPixel(x + 32, y + 32, color);
+  }
+}
+```
+
+With:
+
+```js
+  for (let i = 0; i < 4096; i++) {
+  const x = i % 64 - 32;
+  const y = Math.floor(i / 64) - 32;
+  const angle = Math.atan2(y, x);
+  const distance = Math.sqrt(x * x + y * y);
+  const angleModified = (angle + Math.PI) * 2.546;
+  const distanceModified = 60 / (distance + 1) + timer / 16;
+  const color = distance < 5 ? 0 : (Math.floor(angleModified) ^ Math.floor(distanceModified)) % 4;
+  poke(i, color);
+}
+```
+
+(in the readable version)
+
+This *increased* the sizecoded version by 1 byte...
+
+```js
+let d,i,m=Math,s=32,t=0,x,y;function tic(){t++;for(i=0;i<4096;i++){x=i%64-s;y=~~(i/64)-s;d=m.hypot(x,y);poke(i,d<5?0:(~~((m.atan2(y,x)+m.PI)*2.546)^~~(60/(d+1)+t/16))%4)}for(i=0;i<28;i++){x=76+i*8-(t/4)%300;y=s+m.cos(-i+t/16)*16;dText(x,y,'THEINVADER360         FC64JS'[i],t%12<6?4:5)}}
+```
+
+-----
+
+While looking at that I did spot something I had missed previously... Replaced `{x=76+i*8-(t/4)%300;y=s+m.cos(-i+t/16)*16;dText(x,y,...}` with `dText(76+i*8-(t/4)%300,s+m.cos(-i+t/16)*16,...` for an easy 10 byte saving :)
+
+There was also an unnecessary semicolon wasting a byte...
+
+274 bytes: `let d,i,m=Math,s=32,t=0,x,y;function tic(){t++;for(y=-s;y<s;y++)for(x=-s;x<s;x++){d=m.hypot(x,y);pix(x+s,y+s,d<5?0:(~~((m.atan2(y,x)+m.PI)*2.546)^~~(60/(d+1)+t/16))%4)}for(i=0;i<28;i++)dText(76+i*8-(t/4)%300,s+m.cos(-i+t/16)*16,'THEINVADER360         FC64JS'[i],t%12<6?4:5)}`
+
+-----
