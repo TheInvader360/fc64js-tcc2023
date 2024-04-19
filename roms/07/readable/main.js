@@ -9,26 +9,28 @@ romPalette = [
   0x929292, // grey (dark)
 ];
 
-function romInit() {}
-
 let timer = 0;
+
+function romInit() {}
 
 function romLoop() {
   timer += 0.4;
-  for (let y = -8; y < 24; y++) {
-    for (let x = -8; x < 56; x++) {
-      const angle = Math.atan2(y, x);
+  for (let i = 0; i < 4096; i++) {
+    const x = i % 64;
+    const y = Math.floor(i / 64);
+    let color;
+    if (y < 32) {
+      const shiftedX = x - 8;
+      const shiftedY = y - 8;
+      const angle = Math.atan2(shiftedY, shiftedX);
       const angleAndTime = Math.floor(((angle + timer / 24) + 9) / 0.2) % 2;
-      const distance = Math.hypot(x, y);
-      const color = (distance < 8 ? 0 : distance < 8 + (timer / 3 % 2) ? angleAndTime : angleAndTime + 2) % 8;
-      drawPixel(x + 8, y + 8, color);
-    }
-  }
-  for (let y = 32; y < 64; y++) {
-    for (let x = 0; x < 64; x++) {
+      const distance = Math.hypot(shiftedX, shiftedY);
+      color = (distance < 8 ? 0 : distance < 8 + (timer / 3 % 2) ? angleAndTime : angleAndTime + 2) % 8;
+    } else {
       const xOffsetCentre = 32 + Math.sin(timer / 64) * y / 4;
       const rowShade = (y / 4 - timer % 8 / 4) % 2 < 1 ? 0 : 1;
-      drawPixel(x, y, x < xOffsetCentre - y / 3 ? 4 + rowShade : x < xOffsetCentre + y / 3 ? 6 + rowShade : 4 + rowShade);
+      color = x < xOffsetCentre - y / 3 ? 4 + rowShade : x < xOffsetCentre + y / 3 ? 6 + rowShade : 4 + rowShade;
     }
+    poke(i, color);
   }
 }
