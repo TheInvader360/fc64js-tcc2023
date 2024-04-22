@@ -36,7 +36,7 @@ for (let y = -32; y < 32; y++) {
 With:
 
 ```js
-  for (let i = 0; i < 4096; i++) {
+for (let i = 0; i < 4096; i++) {
   const x = i % 64 - 32;
   const y = Math.floor(i / 64) - 32;
   const angle = Math.atan2(y, x);
@@ -62,6 +62,38 @@ While looking at that I did spot something I had missed previously... Replaced `
 
 There was also an unnecessary semicolon wasting a byte...
 
-274 bytes: `let d,i,m=Math,s=32,t=0,x,y;function tic(){t++;for(y=-s;y<s;y++)for(x=-s;x<s;x++){d=m.hypot(x,y);pix(x+s,y+s,d<5?0:(~~((m.atan2(y,x)+m.PI)*2.546)^~~(60/(d+1)+t/16))%4)}for(i=0;i<28;i++)dText(76+i*8-(t/4)%300,s+m.cos(-i+t/16)*16,'THEINVADER360         FC64JS'[i],t%12<6?4:5)}`
+274 bytes:
+
+```js
+let d,i,m=Math,s=32,t=0,x,y;function tic(){t++;for(y=-s;y<s;y++)for(x=-s;x<s;x++){d=m.hypot(x,y);pix(x+s,y+s,d<5?0:(~~((m.atan2(y,x)+m.PI)*2.546)^~~(60/(d+1)+t/16))%4)}for(i=0;i<28;i++)dText(76+i*8-(t/4)%300,s+m.cos(-i+t/16)*16,'THEINVADER360         FC64JS'[i],t%12<6?4:5)}
+```
+
+273 bytes:
+
+```js
+let d,i,m=Math,s=32,t=0,x,y;function tic(){t++;for(y=-s;y<s;y++)for(x=-s;x<s;x++)d=m.hypot(x,y),pix(x+s,y+s,d<5?0:(~~((m.atan2(y,x)+m.PI)*2.546)^~~(60/(d+1)+t/16))%4);for(i=0;i<28;i++)dText(76+i*8-(t/4)%300,s+m.cos(-i+t/16)*16,'THEINVADER360         FC64JS'[i],t%12<6?4:5)}
+```
 
 -----
+
+261 bytes:
+
+```js
+let i,m=Math,s=32,t=0,x,y;function tic(){t++;for(y=-s;y<s;y++)for(x=-s;x<s;x++)pix(x+s,y+s,(~~((m.atan2(y,x)+m.PI)*2.546)^~~(60/(m.hypot(x,y)+1)+t/16))%4);for(i=0;i<28;i++)dText(76+i*8-(t/4)%300,s+m.cos(-i+t/16)*16,'THEINVADER360         FC64JS'[i],t%12<6?4:5)}
+```
+
+(drops the tunnel "end" effect)
+
+-----
+
+251 bytes:
+
+```js
+let d,i,m=Math,s=32,t=0,x,y;function tic(){t++;for(y=-s;y<s;y++)for(x=-s;x<s;x++)d=m.hypot(x,y),pix(x+s,y+s,d<5?0:(~~((m.atan2(y,x)+m.PI)*2.546)^~~(60/(d+1)+t/16))%4);for(i=0;i<6;i++)dText(64+i*12-(t/4)%136,s+m.cos(-i+t/16)*16,'FC64JS'[i],t%12<6?4:5)}
+```
+
+(shorter message)
+
+-----
+
+Failing to meet the target size was annoying me. Decided to either drop the end of the tunnel effect or shorten the message. The shorter message made achieving the challenge size easier, and looked better, so that option won. Final weigh-in - 251 bytes.

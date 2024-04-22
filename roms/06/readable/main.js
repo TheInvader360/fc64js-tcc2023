@@ -18,9 +18,9 @@ function romLoop() {
   }
   const timerBand = timer % 12;
   const color = timerBand < 6 ? 4 : 5;
-  const message = 'THEINVADER360         FC64JS';
+  const message = 'FC64JS';
   for (let i = 0; i < message.length; i++) {
-    const x = 76 + i * 8 - (timer / 4) % (76 + message.length * 8); 
+    const x = 64 + i * 12 - (timer / 4) % (64 + message.length * 12);
     const y = 32 + Math.cos(-i + timer / 16) * 16;
     drawText(x, y, message[i], color);
   }

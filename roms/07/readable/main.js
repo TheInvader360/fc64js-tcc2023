@@ -28,7 +28,7 @@ function romLoop() {
       color = (distance < 8 ? 0 : distance < 8 + (timer / 3 % 2) ? angleAndTime : angleAndTime + 2) % 8;
     } else {
       const xOffsetCentre = 32 + Math.sin(timer / 64) * y / 4;
-      const rowShade = (y / 4 - timer % 8 / 4) % 2 < 1 ? 0 : 1;
+      const rowShade = Math.floor(y / 4 - timer % 8 / 4) % 2;
       color = x < xOffsetCentre - y / 3 ? 4 + rowShade : x < xOffsetCentre + y / 3 ? 6 + rowShade : 4 + rowShade;
     }
     poke(i, color);
