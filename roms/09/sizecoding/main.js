@@ -1,0 +1,1 @@
+let a,b,i,j,t=0,x,y;function tic(){t+=.01;for(i=-1;i<2;i++)for(j=-1;j<2;j++){x=32+Math.cos(7*t)*32;y=32+Math.sin(6*t)*32;a=gpx(x,y);b=a++;if(a<7)b++,pix(x+i,y+j,b)}if(t>32)cls(),t=0}
