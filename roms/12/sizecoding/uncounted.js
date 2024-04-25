@@ -1,0 +1,1 @@
+fc64Init(function romInit(){},tic,[0x222222,0xffff00,0x1fd655,0x5ced73,0xff0000,0xa020f0,0x964b00,0xffffff]);let cls=clearGfx,rect=drawRectangle
