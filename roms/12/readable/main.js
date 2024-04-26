@@ -43,5 +43,5 @@ function romLoop() {
   });
   points.sort((a, b) => b.z - a.z); // sort by z value descending (z values increase heading "into" the screen)
   points.forEach(p => drawRectangle(Math.round(32 + 400 * p.x / p.z), Math.round(32 + 400 * p.y / p.z), 3, 3, p.c, p.c));
-  drawText(0, 0, `FPS:${getFps()}`, palette.white);
+  //drawText(0, 0, `FPS:${getFps()}`, palette.white);
 }
