@@ -1,1 +1,1 @@
-let s=Math.sin,t=0,x,y;function tic(){t++;for(y=0;y<64;y++)for(x=0;x<64;x++)pix(x,y,~~((s(x/5+t/9)+s(y/5+t/9))+t/9+9)%8)}
+let i,s=Math.sin,t=0;function tic(){t++;for(i=0;i<4096;i++)poke(i,~~((s(i%64/5+t/9)+s(i/64/5+t/9))+t/9+9)%8)}

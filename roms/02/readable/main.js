@@ -10,9 +10,7 @@ function romLoop() {
   drawRectangle(0, 42, 64, 22, 1, 1);
   drawCircle(32, 40, 12, 2, 1);
   drawCircle(32, 23, 8, 2, 1);
-  for (let i = 0; i < 3; i++) {
-    drawLine(32, 24 + i, 37, 26, 3);
-  }
+  drawPolygon([32, 24, 37, 26, 32, 26], 3, 3);
   drawRectangle(29, 21, 2, 2, 4);
   drawRectangle(34, 21, 2, 2, 4);
   for (let i = 0; i < 32; i++) {

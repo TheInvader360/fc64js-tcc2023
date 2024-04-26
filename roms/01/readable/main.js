@@ -6,7 +6,7 @@ function romLoop() {
   clearGfx(0);
   for (let i = 0; i < 3; i++) {
     const t = 6 + ((i + 5) * (i + 1)), b = 16 + ((i + 9) * (i + 1));
-    drawPolygon([{ x: 32, y: t }, { x: 40 + i * 4, y: b }, { x: 24 - i * 4, y: b }], 1, 1);
+    drawPolygon([32, t, 40 + i * 4, b, 24 - i * 4, b], 1, 1);
   }
   drawRectangle(29, 50, 7, 6, 2, 2);
   drawRectangle(0, 56, 64, 8, 1, 1);

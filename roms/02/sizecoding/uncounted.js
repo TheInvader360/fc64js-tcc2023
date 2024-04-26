@@ -1,1 +1,1 @@
-fc64Init(function romInit(){},tic,[0x3f65eb,0xffffff,0x686b6d,0xe46c1f,0x000000]);let circ=drawCircle,cls=clearGfx,line=drawLine,pix=drawPixel,rect=drawRectangle
+fc64Init(function romInit(){},tic,[0x3f65eb,0xffffff,0x686b6d,0xe46c1f,0x000000]);let circ=drawCircle,cls=clearGfx,pix=drawPixel,poly=drawPolygon,rect=drawRectangle

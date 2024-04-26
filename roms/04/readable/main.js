@@ -6,9 +6,9 @@ function romInit() {}
 
 function romLoop() {
   timer++;
-  for (let y = 0; y < 64; y++) {
-    for (let x = 0; x < 64; x++) {
-      drawPixel(x, y, Math.floor((Math.sin(x / 5 + timer / 9) + Math.sin(y / 5 + timer / 9)) + timer / 9 + 9) % 8);
-    }
+  for (let i = 0; i < 4096; i++) {
+    const x = i % 64;
+    const y = i / 64;
+    poke(i, Math.floor((Math.sin(x / 5 + timer / 9) + Math.sin(y / 5 + timer / 9)) + timer / 9 + 9) % 8);
   }
 }

@@ -39,6 +39,24 @@ Of course I could simply modify fc64js to more closely match tic-80 and make thi
 
 That said, Day 1 did have me wondering why I went for the approach I did for ```drawPolygon()``` in fc64js - I'll probably change that to accept an array of (paired) numbers rather than an array of vertex objects. That's not to make these challenges easier (I think we're probably done with polygons here by now anyway...) - it's just better! Similarly the fc64js draw methods *might* handle the wrapping and rounding of memory addresses and color indexes etc in the future, but only if it feels like the right thing to do. Currently that stuff is handled at the rom layer to keep the lower level code uncluttered/clear/efficient/etc. Relying on the rom dev to supply sanitised values doesn't seem unreasonable, the alternative of rounding all values which will usually already be integers doesn't really feel like the right call. Anyway, that's enough musing about the fc64js api for now...
 
+Update - I made the proposed improvement to polygon drawing in fc64js v0.0.7 (see [commit](https://github.com/TheInvader360/fc64js/commit/01d5273a7cd08e97ab777d8ecf5f722f903034f3))
+
 -----
 
 Finally managed this one in 121 bytes (with the usual ```uncounted.js``` caveat)
+
+-----
+
+121 bytes:
+
+```js
+let s=Math.sin,t=0,x,y;function tic(){t++;for(y=0;y<64;y++)for(x=0;x<64;x++)pix(x,y,~~((s(x/5+t/9)+s(y/5+t/9))+t/9+9)%8)}
+```
+
+-----
+
+109 bytes:
+
+```js
+let i,s=Math.sin,t=0;function tic(){t++;for(i=0;i<4096;i++)poke(i,~~((s(i%64/5+t/9)+s(i/64/5+t/9))+t/9+9)%8)}
+```

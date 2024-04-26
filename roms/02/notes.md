@@ -47,3 +47,27 @@ can be reduced to:
 -----
 
 Managed a nice scene in 215 bytes (allowing for the same ```uncounted.js``` caveat as before)
+
+-----
+
+Update: fc64js v0.0.7 offers the option of specifying polygon paths as a flat array of numbers, so the nose/carrot can now be drawn like this:
+
+```js
+poly([32,24,37,26,32,26],3,3)
+```
+
+-----
+
+215 bytes:
+
+```js
+let i,t=0;function tic(){t++;cls();rect(0,42,64,22,1,1);circ(32,40,12,2,1);circ(32,23,8,2,1);for(i=0;i<3;i++)line(32,24+i,37,26,3);[29,34].map(x=>rect(x,21,2,2,4));for(i=0;i<32;i++)pix((t/4+i*14)%64,(t/2+i*6)%64,1)}
+```
+
+-----
+
+207 bytes:
+
+```js
+let i,t=0;function tic(){t++;cls();rect(0,42,64,22,1,1);circ(32,40,12,2,1);circ(32,23,8,2,1);poly([32,24,37,26,32,26],3,3);[29,34].map(x=>rect(x,21,2,2,4));for(i=0;i<32;i++)pix((t/4+i*14)%64,(t/2+i*6)%64,1)}
+```

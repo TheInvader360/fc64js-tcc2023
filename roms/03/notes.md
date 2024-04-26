@@ -11,3 +11,19 @@ The second challenge is to keep your effect at a maximum of 128 characters! Half
 -----
 
 Achieved a pretty cool effect in 96 bytes (same ```uncounted.js``` caveat as before)
+
+-----
+
+96 bytes:
+
+```js
+let t=0,x,y;function tic(){t+=.02;for(y=0;y<64;y++)for(x=0;x<64;x++)pix(x,y,~~(x+20*t+y*t)%6+1)}
+```
+
+-----
+
+84 bytes:
+
+```js
+let i,t=0;function tic(){t+=.02;for(i=0;i<4096;i++)poke(i,~~(i%64+20*t+i/64*t)%6+1)}
+```

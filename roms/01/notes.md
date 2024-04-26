@@ -27,3 +27,34 @@ My alternative approach using fc64js and javascript does still cost a few more b
 * javascript requires ```const```/```let```/```var``` keywords where lua does not
 
 This might make it a bit more difficult to hit the max character targets... I just about scraped under on Day 1 with 247 bytes but I'm guessing this will keep getting harder (getting my excuses in early :D)
+
+-----
+
+Update: fc64js v0.0.7 offers the option of specifying polygon paths as a flat array of numbers, so a triangle can now be drawn like this:
+
+```js
+poly([32,11,40,25,24,25],1,1)
+```
+
+Note that using a polygon to draw the star is still costlier than just drawing four lines:
+
+```js
+l(29,10,35,10,3);l(30,8,34,12,3);l(32,7,32,13,3);l(34,8,30,12,3) // 64 bytes
+poly([32,10,32,7,32,10,34,8,32,10,35,10,32,10,34,12,32,10,32,13,32,10,30,12,32,10,29,10,32,10,30,8],3) // 103 bytes
+```
+
+-----
+
+247 bytes:
+
+```js
+function tic(){let i,l=line,r=rect;cls();for(i=0;i<3;i++){let t=6+(i+5)*(i+1),b=16+(i+9)*(i+1);poly([{x:32,y:t},{x:40+4*i,y:b},{x:24-4*i,y:b}],1,1)}r(29,50,7,6,2,2);r(0,56,64,8,1,1);l(29,10,35,10,3);l(30,8,34,12,3);l(32,7,32,13,3);l(34,8,30,12,3)}
+```
+
+-----
+
+229 bytes:
+
+```js
+function tic(){let i,l=line,r=rect;cls();for(i=0;i<3;i++){let t=6+(i+5)*(i+1),b=16+(i+9)*(i+1);poly([32,t,40+4*i,b,24-4*i,b],1,1)}r(29,50,7,6,2,2);r(0,56,64,8,1,1);l(29,10,35,10,3);l(30,8,34,12,3);l(32,7,32,13,3);l(34,8,30,12,3)}
+```
